@@ -13,11 +13,17 @@ import { IconNavComponent } from './components/icon-nav/icon-nav.component';
     IconCloseComponent,
     IconDeleteComponent,
     IconEditComponent,
-    IconNavComponent, 
+    IconNavComponent,
   ],
   imports: [
     CommonModule,
     FontAwesomeModule
+  ],
+  exports :[
+    IconCloseComponent,
+    IconDeleteComponent,
+    IconEditComponent,
+    IconNavComponent
   ]
 })
 export class IconsModule { }
