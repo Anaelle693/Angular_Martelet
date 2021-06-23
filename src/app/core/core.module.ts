@@ -6,6 +6,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
 import { UiModule } from '../ui/ui.module';
+import { LoginModule } from '../login/login.module';
 
 
 
@@ -25,7 +26,8 @@ import { UiModule } from '../ui/ui.module';
     HeaderComponent,
     NavComponent,
     IconsModule,
-    UiModule
+    UiModule,
+    LoginModule
   ]
 })
 export class CoreModule { }
