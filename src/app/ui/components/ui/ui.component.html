@@ -3,12 +3,14 @@
   <ng-content select=".tr_header"></ng-content>
 
 </header>
+
 <main [ngClass]="{'close-aside': !open}">
 
   <div class="shadow position-fixed"></div>
 
   <aside>
     <div class="scroller">
+
       <ng-content select=".tr-nav"></ng-content>
 
     </div>
@@ -16,10 +18,12 @@
 
   <div class="page">
     <div class="contents">
+
       <ng-content select=".tr-content"></ng-content>
 
     </div>
     <footer>
+
       <ng-content select=".tr-footer"></ng-content>
 
     </footer>
