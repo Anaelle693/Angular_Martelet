@@ -9,4 +9,8 @@ export class VersionService {
   public version$ = new BehaviorSubject(1);
 
   constructor() { }
+
+  public incrementVersion() : void{
+    this.version$.next(this.version$.value + 1);
+  }
 }
