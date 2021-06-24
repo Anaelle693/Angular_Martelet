@@ -5,14 +5,58 @@
     <input type="text" id="typePresta" class="form-control" formGroupName="typePresta">
 
     <div *ngIf="form.controls['typePresta'].invalid && form.controls['typePresta'].touched">
+      Champs Invalide
+    </div>
       <span>Invalid: {{ form.controls['typePresta'].invalid }}</span>
       <span>Valid: {{ form.controls['typePresta'].valid }}</span>
       <span>Touched: {{ form.controls['typePresta'].touched }}</span>
       <span>Untouched: {{ form.controls['typePresta'].untouched }}</span>
       <span>Pristine: {{ form.controls['typePresta'].pristine }}</span>
       <span>Dirty: {{ form.controls['typePresta'].dirty }}</span>
-    </div>
-    
+
   </div>
+
+    <div class="form-group">
+      <label for="client">Client :</label>
+      <input type="text" class="form-control" id="client" formControlName="client">
+      <div class="alert alert-danger" *ngIf="form.controls['client'].invalid && form.controls['client'].touched">
+        Champs Invalide
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="nbJours">Nb Jours : </label>
+      <input type="number" class="form-control" id="nbJours" formControlName="nbJours">
+
+    </div>
+
+    <div class="form-group">
+      <label for="tjmHt">Tjm HT : </label>
+      <input type="number" class="form-control" id="tjmHt" formControlName="tjmHt">
+
+    </div>
+
+    <div class="form-group">
+      <label for="tva">TVA : </label>
+      <input type="number" class="form-control" id="tva" formControlName="tva">
+
+    </div>
+
+    <div class="form-group">
+      <label for="state">State : </label>
+      <input class="form-control" id="state" formControlName="state">
+      <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
+
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Comment : </label>
+      <input class="form-control" id="comment" formControlName="comment">
+
+    </div>
+
+   <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+
+
 
 </form>

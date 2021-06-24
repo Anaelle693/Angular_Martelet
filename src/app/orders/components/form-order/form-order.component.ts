@@ -14,7 +14,7 @@ export class FormOrderComponent implements OnInit {
   @Output() submited: EventEmitter<Order> = new EventEmitter<Order>();
 
   public form!: FormGroup;
-  public state = Object.values(StateOrder);
+  public states = Object.values(StateOrder);
 
   constructor(private fb: FormBuilder) { }
 
