@@ -6,6 +6,7 @@ import { TableDarkComponent } from './components/table-dark/table-dark.component
 import { TableLightComponent } from './components/table-light/table-light.component';
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
+import { TotalPipe } from './pipes/total.pipe';
 
 
 
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     BtnComponent,
     TableDarkComponent,
-    TableLightComponent
+    TableLightComponent,
+    TotalPipe
   ],
   imports: [
     CommonModule, RouterModule
@@ -23,7 +25,8 @@ import { RouterModule } from '@angular/router';
     BtnComponent,
     IconsModule,
     TableDarkComponent,
-    TableLightComponent
+    TableLightComponent,
+    TotalPipe
   ]
 })
 export class SharedModule { }
