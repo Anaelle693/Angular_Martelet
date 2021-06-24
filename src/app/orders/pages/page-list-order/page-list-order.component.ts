@@ -27,8 +27,10 @@ export class PageListOrderComponent implements OnInit {
       'Client',
       'Nombre Jours',
       'Tmj HT',
+      'TVA',
       'Total HT',
       'Total TTC',
+      'Comment',
       "State"
     ];
   }

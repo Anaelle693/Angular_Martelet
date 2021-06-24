@@ -9,13 +9,14 @@
         <app-icon-delete (click)="deleteItem(item.id)"></app-icon-delete>
       </td>
 
-      <td> {{item.typePresta }}</td>
+      <td> {{item.typePresta }} </td>
       <td> {{item.client | uppercase}} </td>
       <td> {{item.nbJours }} </td>
       <td> {{item.tjmHt | currency}} </td>
+      <td> {{item.tva }}%</td>
       <td> {{item.tjmHt | total: item.nbJours | currency}} </td>
       <td> {{item.tjmHt | total: item.nbJours: item.tva | currency}} </td>
-
+      <td> {{item.comment}} </td>
       <td [appState]="item.state">
 
         <select (change)="changeState(item, $event)">
