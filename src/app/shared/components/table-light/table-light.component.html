@@ -1,1 +1,17 @@
-<p>table-light works!</p>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- bouclage sur le tableau de string des "headers" -->
+        <th *ngFor="let item of headers">
+            {{item}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <ng-content ></ng-content>
+
+    </tbody>
+  </table>
+</div>

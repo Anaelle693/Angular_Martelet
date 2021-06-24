@@ -1,3 +1,6 @@
 <app-template-full-width title="List orders" *ngIf="collection$ | async as collection">
   {{collection | json}}
+  <app-table-light [headers]="headers">
+
+  </app-table-light>
 </app-template-full-width>
