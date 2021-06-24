@@ -7,7 +7,7 @@ import { PageListOrderComponent } from './pages/page-list-order/page-list-order.
 const routes: Routes = [
   { path: "", component: PageListOrderComponent },
   { path: "add", component: PageAddOrderComponent },
-  { path: "edit", component: PageEditOrderComponent }
+  { path: "edit/:id", component: PageEditOrderComponent }
 ];
 
 @NgModule({

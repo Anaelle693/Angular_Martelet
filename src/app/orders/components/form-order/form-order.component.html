@@ -1,0 +1,18 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="typePresta">Type :</label>
+    <input type="text" id="typePresta" class="form-control" formGroupName="typePresta">
+
+    <div *ngIf="form.controls['typePresta'].invalid && form.controls['typePresta'].touched">
+      <span>Invalid: {{ form.controls['typePresta'].invalid }}</span>
+      <span>Valid: {{ form.controls['typePresta'].valid }}</span>
+      <span>Touched: {{ form.controls['typePresta'].touched }}</span>
+      <span>Untouched: {{ form.controls['typePresta'].untouched }}</span>
+      <span>Pristine: {{ form.controls['typePresta'].pristine }}</span>
+      <span>Dirty: {{ form.controls['typePresta'].dirty }}</span>
+    </div>
+    
+  </div>
+
+</form>

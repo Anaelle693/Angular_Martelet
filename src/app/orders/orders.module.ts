@@ -6,13 +6,15 @@ import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.com
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
 import { PageListOrderComponent } from './pages/page-list-order/page-list-order.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormOrderComponent } from './components/form-order/form-order.component';
 
 
 @NgModule({
   declarations: [
     PageAddOrderComponent,
     PageEditOrderComponent,
-    PageListOrderComponent
+    PageListOrderComponent,
+    FormOrderComponent
   ],
   imports: [
     CommonModule,

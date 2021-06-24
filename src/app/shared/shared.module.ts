@@ -7,6 +7,8 @@ import { TableLightComponent } from './components/table-light/table-light.compon
 import { IconsModule } from '../icons/icons.module';
 import { RouterModule } from '@angular/router';
 import { TotalPipe } from './pipes/total.pipe';
+import { StateDirective } from './directives/state.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +17,8 @@ import { TotalPipe } from './pipes/total.pipe';
     BtnComponent,
     TableDarkComponent,
     TableLightComponent,
-    TotalPipe
+    TotalPipe,
+    StateDirective
   ],
   imports: [
     CommonModule, RouterModule
@@ -26,7 +29,9 @@ import { TotalPipe } from './pipes/total.pipe';
     IconsModule,
     TableDarkComponent,
     TableLightComponent,
-    TotalPipe
+    TotalPipe,
+    StateDirective,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
