@@ -45,6 +45,7 @@
     <div class="form-group">
       <label for="state">State : </label>
       <input class="form-control" id="state" formControlName="state">
+
       <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
 
     </div>
