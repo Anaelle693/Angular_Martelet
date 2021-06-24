@@ -22,4 +22,12 @@ export class OrdersService {
       this.collection$.next(data);
     });
   }
+
+  public get collection(): BehaviorSubject<Order[]>{
+    return this.collection$
+  }
+
+  public set collection(col: BehaviorSubject<Order[]>){
+    this.collection$ = col;
+  }
 }
