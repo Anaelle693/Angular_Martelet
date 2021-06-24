@@ -58,4 +58,19 @@ export class OrdersService {
       })
     );
   }
+
+  // ajout d'un item dans la collection
+  public add(item: Order): Observable<Order>{
+    return this.http.post<Order>(`${this.urlApi}/orders`, item)
+    .pipe(
+      tap((res) =>{
+        this.refreshCollection();
+      })
+    );
+  }
+
+  // get item dans la collection par son ID
+  public getItemById(id: number): Observable<Order>{
+    return this.http.get<Order>(`${this.urlApi}/orders/${id}`);
+  }
 }

@@ -20,9 +20,12 @@ export class PageAddOrderComponent implements OnInit {
   }
 
   public add(item: Order): void {
-
+    this.orderService.add(item).subscribe((res) =>{
+      // retour à l'affiche des orders
+      this.router.navigate(['orders']);
+    })
   }
 
-  
+
 
 }

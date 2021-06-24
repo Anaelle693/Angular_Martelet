@@ -2,7 +2,7 @@
 
   <div class="form-group">
     <label for="typePresta">Type :</label>
-    <input type="text" id="typePresta" class="form-control" formGroupName="typePresta">
+    <input type="text" id="typePresta" class="form-control" formControlName="typePresta">
 
     <div *ngIf="form.controls['typePresta'].invalid && form.controls['typePresta'].touched">
       Champs Invalide
@@ -46,8 +46,8 @@
       <label for="state">State : </label>
       <input class="form-control" id="state" formControlName="state">
 
-      <option *ngFor="let state of states" [ngValue]="state">{{state}}</option>
-
+       <option *ngFor="let state of states" [ngValue]="state"></option>
+<!--{{state}}-->
     </div>
 
     <div class="form-group">
