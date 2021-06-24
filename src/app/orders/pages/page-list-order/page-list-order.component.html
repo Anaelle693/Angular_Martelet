@@ -18,7 +18,7 @@
 
       <td>
         <select >
-          <option *ngFor="let state of states">
+          <option *ngFor="let state of states" [selected]="item.state === state" [value]="state">
             {{state}}
           </option>
         </select>
