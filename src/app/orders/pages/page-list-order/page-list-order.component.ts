@@ -29,7 +29,7 @@ export class PageListOrderComponent implements OnInit {
       'Total HT',
       'Total TTC',
       "State"
-    ]
+    ];
   }
 
   ngOnInit(): void {
