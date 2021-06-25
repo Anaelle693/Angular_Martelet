@@ -2,6 +2,8 @@ import { Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { Order } from 'src/app/core/models/order';
 import { FormBuilder, FormGroup, Validator, Validators } from '@angular/forms';
 import { StateOrder} from 'src/app/core/enums/state-order.enum';
+import { Client } from 'src/app/core/models/client';
+import { ClientsService } from 'src/app/clients/services/clients.service';
 
 @Component({
   selector: 'app-form-order',
@@ -16,7 +18,15 @@ export class FormOrderComponent implements OnInit {
   public form!: FormGroup;
   public states = Object.values(StateOrder);
 
-  constructor(private fb: FormBuilder) { }
+  // liste des clients pour menu déroulant
+  public clients!: Client[];
+
+  constructor(private fb: FormBuilder, private clientService: ClientsService) {
+    // récupération de la liste des clients
+    clientService.collection.subscribe((data) => {
+      this.clients = data;
+    })
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -37,4 +47,6 @@ export class FormOrderComponent implements OnInit {
   public onSubmit(): void{
     this.submited.emit(this.form.value);
   }
+
+  
 }

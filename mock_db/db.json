@@ -6,7 +6,7 @@
       "tva": 20,
       "state": "CANCELED",
       "typePresta": "coaching",
-      "client": "ddd",
+      "client": "Christophe2",
       "comment": null,
       "id": 2
     },
@@ -16,7 +16,7 @@
       "tva": 20,
       "state": "CONFIRMED",
       "typePresta": "test",
-      "client": "CCI",
+      "client": "Modis",
       "comment": "Une souris Verte",
       "id": 3
     }
@@ -58,7 +58,7 @@
       "name": "blablabla",
       "tva": 20,
       "totalCaHt": 200,
-      "state": "ACTIVE",
+      "state": "INACTIVE",
       "comment": "Ah coucou",
       "id": 5
     }
