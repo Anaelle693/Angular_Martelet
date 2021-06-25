@@ -2,19 +2,22 @@
   <app-table-light [headers]="headers">
 
     <tr *ngFor="let item of collection">
+
       <td>
-        <app-icon-edit></app-icon-edit>
-        <app-icon-delete></app-icon-delete>
+        <app-icon-edit (click)="gotoEdit(item.id)"></app-icon-edit>
+        <app-icon-delete (click)="deleteItem(item.id)"></app-icon-delete>
       </td>
+
       <td>{{ item.id }}</td>
       <td>{{ item.name | uppercase }}</td>
       <td>{{ item.totalCaHt | currency }}</td>
       <td>{{ item.tva }}%</td>
       <td>{{ item.totalCaHt | total:1:item.tva | currency }}</td>
       <td>{{ item.comment }}</td>
+      
       <td [appState]="item.state">
 
-        <select>
+        <select (change)="changeState(item, $event)">
           <option *ngFor="let state of states" [value]="state" [selected]="item.state === state">
             {{state}}
           </option>

@@ -35,5 +35,18 @@ export class PageListClientsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  // editer
+  gotoEdit(id: number):void{
 
+  }
+
+  // supprimer
+  deleteItem(id: number): void {
+
+  }
+
+  // changement d'etat
+  public changeState(item: Client, event: any){
+    
+  }
 }
