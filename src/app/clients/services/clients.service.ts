@@ -30,4 +30,38 @@ export class ClientsService {
   public set collection(col: BehaviorSubject<Client[]>){
     this.collection$ = col;
   }
+
+  public deleteItem(id:number): Observable<Client>{
+    return this.http.delete<Client>(`${this.urlApi}/clients/${id}`)
+    .pipe(
+      tap((res) => {
+        this.refreshCollection();
+      })
+    );
+  }
+
+  public update(item: Client): Observable<Client>{
+    return this.http.put<Client>(`${this.urlApi}/clients/${item.id}`, item)
+    .pipe(
+      tap((res) => {
+        this.refreshCollection();
+      })
+    );
+  }
+
+  // changement du statut du client
+  public changeItem(item: Client, state: StateClient): Observable<Client>{
+    // destruction de l'objet (opérateur spread)
+    const obj = { ...item};
+    // nouveau statut
+    obj.state = state;
+    // mise à jour de l'objet
+    return this.update(obj);
+  }
+
+  /* Méthodes HTTP pour les API
+   - lecture: GET
+   - création: POST
+   - mise à jour: PUT
+   - effacement : DELETE*/
 }

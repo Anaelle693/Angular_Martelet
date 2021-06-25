@@ -37,16 +37,23 @@ export class PageListClientsComponent implements OnInit {
   }
   // editer
   gotoEdit(id: number):void{
+    // redirection vers clients/edit/:id
+    this.router.navigate(['clients', 'edit', id])
 
   }
 
   // supprimer
   deleteItem(id: number): void {
+    this.clientService.deleteItem(id).subscribe();
 
   }
 
   // changement d'etat
   public changeState(item: Client, event: any){
-    
+    const state = event.target.value;
+    this.clientService.changeItem(item, state).subscribe((data)=>{
+      // mise a jour du contenu de l'item
+      item.state = data.state;
+    })
   }
 }
