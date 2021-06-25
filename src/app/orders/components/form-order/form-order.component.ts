@@ -18,13 +18,17 @@ export class FormOrderComponent implements OnInit {
   public form!: FormGroup;
   public states = Object.values(StateOrder);
 
+
   // liste des clients pour menu déroulant
-  public clients!: Client[];
+  public clients: Client[]= [];
 
   constructor(private fb: FormBuilder, private clientService: ClientsService) {
     // récupération de la liste des clients
     clientService.collection.subscribe((data) => {
-      this.clients = data;
+      // this.clients = data;
+      data.forEach((element) => {
+        if(element.state !== 'INACTIVE') this.clients.push(element);
+      })
     })
   }
 
@@ -48,5 +52,5 @@ export class FormOrderComponent implements OnInit {
     this.submited.emit(this.form.value);
   }
 
-  
+
 }

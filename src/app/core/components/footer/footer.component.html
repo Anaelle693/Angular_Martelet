@@ -1,1 +1,7 @@
-<p *ngIf="version$ | async as version">{{ version }}</p>
+
+<div>
+  <p *ngIf="version$ | async as version">{{ version }}</p>
+  <p class="text-center">{{proverbe}}</p>
+  <p class="copy"> &copy; Copyright {{date}} | Anaëlle V.</p>
+</div>
+

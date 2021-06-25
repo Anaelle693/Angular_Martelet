@@ -17,4 +17,6 @@ export class UiComponent implements OnInit {
   public toggle(): void{
     this.open = !this.open;
   }
+
+  
 }
