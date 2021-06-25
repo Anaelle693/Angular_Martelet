@@ -59,6 +59,20 @@ export class ClientsService {
     return this.update(obj);
   }
 
+   // ajout d'un item dans la collection
+   public add(item: Client): Observable<Client>{
+    return this.http.post<Client>(`${this.urlApi}/clients`, item)
+    .pipe(
+      tap((res) =>{
+        this.refreshCollection();
+      })
+    );
+  }
+
+  // get item dans la collection par son ID
+  public getItemById(id: number): Observable<Client>{
+    return this.http.get<Client>(`${this.urlApi}/clients/${id}`);
+  }
   /* Méthodes HTTP pour les API
    - lecture: GET
    - création: POST

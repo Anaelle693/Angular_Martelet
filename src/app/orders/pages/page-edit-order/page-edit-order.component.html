@@ -1,3 +1,3 @@
-<app-template-container>
+<app-template-container title="Edit Order">
   <app-form-order *ngIf="item$ | async as item" [init]="item" (submited)="edit($event)"></app-form-order>
 </app-template-container>

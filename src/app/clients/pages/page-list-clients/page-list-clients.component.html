@@ -14,7 +14,7 @@
       <td>{{ item.tva }}%</td>
       <td>{{ item.totalCaHt | total:1:item.tva | currency }}</td>
       <td>{{ item.comment }}</td>
-      
+
       <td [appState]="item.state">
 
         <select (change)="changeState(item, $event)">
